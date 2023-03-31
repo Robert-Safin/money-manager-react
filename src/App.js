@@ -1,7 +1,8 @@
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 import Card from "./components/UI/Card";
+import NewExpense from './components/NewExpense/NewExpense'
 
-function App() {
+const App = () => {
   const expenses = [
     {
       id: "e1",
@@ -24,8 +25,14 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log('App.js');
+    console.log(expense);
+  }
+
   return (
     <Card>
+      <NewExpense onAddExpense={addExpenseHandler}/>
       {expenses.map((expense) => (
         <ExpenseItem expense={expense}></ExpenseItem>
       ))}
