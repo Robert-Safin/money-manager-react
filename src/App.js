@@ -36,19 +36,25 @@ const App = () => {
   };
 
   const yearHandler = (year) => {
-    console.log(year);
+    setYear(year)
   };
 
   const [selectedYear, setYear] = useState("2020");
+
+
 
   return (
     <Card>
       <NewExpense onAddExpense={addExpenseHandler} />
       <ExpenseFilter selected={selectedYear} onFilterSelect={yearHandler} />
 
-      {expenses.map((expense) => (
-        <ExpenseItem expense={expense} key={expense.id} />
-      ))}
+      {expenses
+        .filter(
+          (expense) => expense.date.getFullYear().toString() === selectedYear
+        )
+        .map((expense) => (
+          <ExpenseItem key={expense.id} expense={expense} />
+        ))}
     </Card>
   );
 };
