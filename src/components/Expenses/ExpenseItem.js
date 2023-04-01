@@ -3,8 +3,9 @@ import './ExpenseDate'
 import ExpenseDate from './ExpenseDate'
 
 
+
 const ExpenseItem = (props) => {
-  //title amount date
+
 
   return (
     <div className="expense-item">
@@ -13,7 +14,6 @@ const ExpenseItem = (props) => {
         <h2>{props.expense.title}</h2>
         <div className="expense-item__price">${props.expense.amount}</div>
       </div>
-      <button>Change title</button>
     </div>
   );
 }
