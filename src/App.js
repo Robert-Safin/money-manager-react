@@ -3,6 +3,7 @@ import NewExpense from "./components/NewExpense/NewExpense";
 import ExpenseFilter from "./components/ExpenseFilter/ExpenseFilter";
 import OutputExpenses from "./components/Expenses/OutputExpenses";
 import React, { useState } from "react";
+import ExpensesChart from "./components/Expenses/ExpensesChart";
 
 const dummyExpenses = [
   {
@@ -52,7 +53,7 @@ const App = () => {
       <NewExpense onAddExpense={addExpenseHandler} />
 
       <ExpenseFilter selected={selectedYear} onFilterSelect={yearHandler} />
-
+      <ExpensesChart expenses={filteredExpenses}/>
       <OutputExpenses output={filteredExpenses}/>
     </Card>
   );
